@@ -1,36 +1,26 @@
 .app {
-  min-height: 100vh;
-
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
-
   background:
-    linear-gradient(
-      180deg,
-      #fff7f8 0%,
-      #fff 100%
-    );
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(244, 247, 255, 0.95) 35%, rgba(236, 242, 255, 0.98) 100%);
 }
 
 .main {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  justify-content: center;
-
-  padding: 24px;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px 16px calc(24px + env(safe-area-inset-bottom));
 }
 
 .card-stack {
   position: relative;
-
-  width: 380px;
-  height: 560px;
-
-  margin-bottom: 32px;
+  width: min(92vw, 430px);
+  height: min(74svh, 640px);
+  min-height: 460px;
 }
 
 .stack-layer {
@@ -67,8 +57,8 @@
 
 @media (max-width: 480px) {
   .card-stack {
-    width: 92vw;
-    height: 72vh;
-    max-height: 560px;
+    width: min(94vw, 420px);
+    height: min(72svh, 560px);
+    min-height: 420px;
   }
 }

@@ -24,6 +24,8 @@ export function SwipeCard({
   } = useSwipe();
 
   const draggingRef = useRef(false);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const touchDirectionRef = useRef<"horizontal" | "vertical" | "none">("none");
 
   const handleMouseDown = (
     event: React.MouseEvent<HTMLDivElement>
@@ -62,6 +64,8 @@ export function SwipeCard({
   ): void => {
     const touch = event.touches[0];
 
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    touchDirectionRef.current = "none";
     startDrag(touch.clientX, touch.clientY);
   };
 
@@ -70,10 +74,31 @@ export function SwipeCard({
   ): void => {
     const touch = event.touches[0];
 
-    moveDrag(touch.clientX, touch.clientY);
+    if (!touchStartRef.current) {
+      return;
+    }
+
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = touch.clientY - touchStartRef.current.y;
+
+    if (touchDirectionRef.current === "none") {
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 8) {
+        touchDirectionRef.current = "horizontal";
+      } else if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 8) {
+        touchDirectionRef.current = "vertical";
+      }
+    }
+
+    if (touchDirectionRef.current === "horizontal") {
+      event.preventDefault();
+      moveDrag(touch.clientX, touch.clientY);
+    }
   };
 
   const handleTouchEnd = (): void => {
+    touchStartRef.current = null;
+    touchDirectionRef.current = "none";
+
     const result = endDrag();
 
     if (result !== null) {

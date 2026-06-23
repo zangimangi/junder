@@ -1,4 +1,5 @@
 import type { Profile } from "../types/profile";
+import { profileImages } from "./images";
 
 export const profiles: Profile[] = [
   {
@@ -6,8 +7,7 @@ export const profiles: Profile[] = [
     name: "ジュン",
     age: 23,
     bio: "ゲームとラーメンを愛しています。",
-    image:
-      "src\\data\\images\\jun1.png",
+    image: profileImages.jun1,
     matchRate: 0.85,
   },
   {
@@ -15,8 +15,7 @@ export const profiles: Profile[] = [
     name: "Hiro",
     age: 23,
     bio: "週末は友達と飲みに行くのが好きです。",
-    image:
-      "src\\data\\images\\jun2.jpg",
+    image: profileImages.jun2,
     matchRate: 0.6,
   },
   {
@@ -24,8 +23,7 @@ export const profiles: Profile[] = [
     name: "Jun",
     age: 23,
     bio: "よくメロいって言われます！",
-    image:
-      "src\\data\\images\\jun3.jpg",
+    image: profileImages.jun3,
     matchRate: 0.6,
   },
   {
@@ -33,8 +31,7 @@ export const profiles: Profile[] = [
     name: "ヒロキ",
     age: 23,
     bio: "週128は筋トレしてますよ",
-    image:
-      "src\\data\\images\\jun4.jpg",
+    image: profileImages.jun4,
     matchRate: 0.6,
   },
   {
@@ -42,8 +39,7 @@ export const profiles: Profile[] = [
     name: "たかだ",
     age: 23,
     bio: "ウェイ系の陽キャです！お酒強い人と仲良くなりたいです！",
-    image:
-      "src\\data\\images\\jun5.jpg",
+    image: profileImages.jun5,
     matchRate: 0.6,
   },
   {
@@ -51,8 +47,7 @@ export const profiles: Profile[] = [
     name: "ヒ",
     age: 23,
     bio: "猫ミーム真似してみたり。",
-    image:
-      "src\\data\\images\\jun6.jpg",
+    image: profileImages.jun6,
     matchRate: 0.6,
   },
   {
@@ -60,8 +55,7 @@ export const profiles: Profile[] = [
     name: "ヒロッキ",
     age: 23,
     bio: "男らしい顔してるってよく言われます！",
-    image:
-      "src\\data\\images\\jun7.jpg",
+    image: profileImages.jun7,
     matchRate: 0.6,
   },
 ];

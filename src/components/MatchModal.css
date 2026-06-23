@@ -1,75 +1,61 @@
 .match-overlay {
   position: fixed;
   inset: 0;
-
-  background: rgba(0, 0, 0, 0.75);
-
+  background: rgba(15, 23, 42, 0.62);
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 1000;
+  padding: 20px;
 }
 
 .match-modal {
-  width: 90%;
-  max-width: 520px;
-
-  padding: 40px;
-
-  border-radius: 24px;
-
+  width: min(92vw, 520px);
+  padding: 32px 24px 28px;
+  border-radius: 28px;
   text-align: center;
-
-  color: white;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff4b6e,
-      #ff7b8d
-    );
-
+  color: #111827;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
   animation: popIn 0.35s ease;
 }
 
 .match-modal h1 {
   margin-top: 0;
-  font-size: 3rem;
+  margin-bottom: 8px;
+  font-size: 2.2rem;
+  color: #111827;
+}
+
+.match-modal p {
+  margin: 0 0 20px;
+  color: #6b7280;
 }
 
 .match-images {
   display: flex;
   justify-content: center;
-  gap: 24px;
-
-  margin: 24px 0;
+  gap: 18px;
+  margin: 20px 0 24px;
 }
 
 .match-images img {
   width: 120px;
   height: 120px;
-
   object-fit: cover;
-
   border-radius: 50%;
-
-  border: 4px solid white;
+  border: 4px solid #f3f4f6;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
 }
 
 .match-button {
   border: none;
-
   padding: 14px 28px;
-
   border-radius: 999px;
-
   cursor: pointer;
-
   font-weight: 700;
-
-  color: #ff4b6e;
-  background: white;
+  color: white;
+  background: linear-gradient(135deg, #111827, #374151);
 }
 
 @keyframes popIn {
